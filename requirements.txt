@@ -3,3 +3,4 @@ uvicorn
 gradio
 transformers
 torch
+sqlalchemy>=2.0

@@ -1,0 +1,19 @@
+services:
+  app:
+    image: blenderbot:latest
+    build: .
+    container_name: chatbot_app
+    environment:
+      DATABASE_URL: postgresql://user:pass@db:5432/mydatabase
+    ports:
+      - "8000:8000"
+  db:
+    image: postgres:15
+    container_name: chatbot_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+
